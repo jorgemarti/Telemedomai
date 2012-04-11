@@ -1,0 +1,5 @@
+<NumColegiado><Nombre><Apellidos><Especialidad>
+123456-X
+Jorge
+Martí Coronil
+Traumatología Etílica Terminal
