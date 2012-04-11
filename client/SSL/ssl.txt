@@ -1,0 +1,35 @@
+
+Creación del par de claves para el cliente (para un paciente estandar). 
+
+>>keytool -genkey -alias paciente -keypass pacientepassword -validity 365 -storepass pacientepassword -keystore paciente.keystore
+
+Podemos comprobar el contenido del keystore con esta instrucción:
+
+>>keytool -list -storepass pacientepassword -keystore paciente.keystore
+
+
+Creamos una petición de certificado firmado, que sería enviada a la autoridad certificadora real, o la oficial de nuestro sistema,
+para cada usuario del mismo:
+
+>>keytool -certreq -alias paciente -file paciente.csr -keypass pacientepassword -storepass pacientepassword -keystore paciente.keystore -validity 1000
+
+
+La autoridad certificadora (CA) firma las peticiones de certificado. Estos certificados firmados se devuelven al usuario:
+
+>>openssl x509 -req -in paciente.csr -out paciente.cer -CA ca.crt -CAkey ca.key
+
+Instalamos el certificado de la CA en el 'cacerts keystore' para que sea reconocido por el sistema. El cliente deberá hacer lo mismo, por lo que le mandaremos el certificado del CA 'ca.crt'. Al loro con tener bien escrita la variable del sistema %JAVA_HOME%!
+
+>>keytool -import -alias ca -keypass capassword -file ca.crt -keystore "%JAVA_HOME%/jre1.5.0_11/lib/security/cacerts" -storepass changeit
+
+Instalamos el certificado de la CA también en los keystores de los usuarios:
+
+>>keytool -import -alias ca -file ca.crt -keystore paciente.keystore
+
+Finalmente instalamos los certificados firmados por la CA:
+
+>>keytool -import -trustcacerts -file paciente.cer -keystore paciente.keystore -alias paciente -keypass pacientepassword -storepass pacientepassword 
+
+
+Por último, si queremos, podemos observar el contenido de nuestro almacén de claves para ver cómo quedó:
+>>keytool -list -v -storepass keystorepassword

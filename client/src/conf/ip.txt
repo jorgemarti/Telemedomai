@@ -1,0 +1,6 @@
+<Especialista>:<dirección ip>
+Doctor Elisondo - Cardiología:127.0.0.1
+Hospital General de Monclova:10.17.135.174
+Dr. Jorge Martí - Traumatología:10.16.85.119
+Dr. Gerardo Castañón:192.168.1.4
+Pepet:192.168.1.3
