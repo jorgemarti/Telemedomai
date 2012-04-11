@@ -1,4 +1,4 @@
-      Project Telemedomai        
+Project Telemedomai       
 =================================
 
 Version: 1.0 - [Homepage](http://jorgemarti.com/projects/telemedomai)
