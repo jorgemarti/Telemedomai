@@ -5,6 +5,7 @@ Version: 1.0 - [Homepage](http://jorgemarti.com/projects/telemedomai)
 
 ## Presentation
 Project presented as a Final Degree Thesis for Jorge Marti's degree of Telecommunication Engineer, advisored by Dr. Gerardo A. Castañon A.
+
 Department of Electrical and Commputer Engineering - ITESM Campus Monterrey (Mexico)
 
 ## Abstract
