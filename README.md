@@ -10,6 +10,7 @@ Department of Electrical and Commputer Engineering - ITESM Campus Monterrey (Mex
 
 ## Abstract
 Development in Java language of a telemedicine system for remote assistance of patients by doctors and specialists, by the use of two different programs in a client-server scheme.
+Use of video-conference (Java Media Framework API), image, sound and other medical data exchange, and SSL secure connections.
 
 ## Installation
 
